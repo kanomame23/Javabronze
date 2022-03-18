@@ -116,3 +116,41 @@ class Main {
 
     //拡張for文
     
+    package sample;
+
+      public class JavaSampleClass {
+
+          public static void main(String[] args) {
+            
+            ClassA classA = new ClassA();
+            classA.doMethod(0, 1);
+          }
+
+      }
+
+        class ClassA {
+          public void doMethod() {
+            System.out.println("doMethod-A");
+          }
+          public void doMethod(int a) {
+            System.out.println("doMethod-B");
+          }
+          public void doMethod(int a, int b) {
+            System.out.println("引数int型データ2つ");
+          }
+        }
+
+    //オーバーロードメソッドは、引数に渡すデータの型と数、順番により、どれが実行されるのかが決まる
+    //mainメソッドの4行目で、int型のデータを2つ渡してdoMethodメソッドを呼び出している
+        
+    public class Account {
+      private int balance;
+    }
+      public Account() {
+        this.balance = 0;
+      }
+
+    //コンストラクタに関しての3つのルール
+    //コンストラクタ名は、クラス名と同じでなければならない
+    //戻り値型は記述できない
+    //インスタンス生成時にしか使えない
