@@ -154,3 +154,77 @@ class Main {
     //コンストラクタ名は、クラス名と同じでなければならない
     //戻り値型は記述できない
     //インスタンス生成時にしか使えない
+
+    class Main {
+      public static void main(String[] args) {
+        printData(fullName("Kate", "Jones"), 27, 1.6, 50.0);
+        printData(fullName("John", "Christopher", "Smith"), 65, 1.75, 80.0);
+      }
+    
+      public static void printData(String name, int age, double height, double weight) {
+        System.out.println("私の名前は" + name + "です");
+        System.out.println("年齢は" + age + "歳です");
+        System.out.println("身長は" + height + "mです");
+        System.out.println("体重は" + weight + "kgです");
+        
+        // 変数bmiに、bmiメソッドを用いてBMIを代入してください
+        double bmi = bmi(height, weight);
+        
+        // 変数bmiを用いて、「BMIは◯◯です」と出力してください
+        System.out.println("BMIは" + bmi + "です");
+        
+      }
+    
+      public static String fullName(String firstName, String lastName) {
+        return firstName + " " + lastName;
+      }
+      
+      public static String fullName(String firstName, String middleName, String lastName) {
+        return firstName + " " + middleName + " " + lastName;
+      }
+      
+      // bmiメソッドを定義してください
+      public static double bmi(double height, double weight) {
+        return weight / height / height;
+      }
+      
+    }
+
+      //メソッドのオーバーロード・void=戻り値がないということ・同名のメソッドを定義することをオーバーロードという
+      //同名のメソッドは原則として定義できない。しかし、引数の肩や個数が違う場合は、同名のメソッドを定義できる
+
+      public static double average(int a, int b) {
+        int total = add(a, b);
+        return (double)total / 2;
+      }
+
+      public static int add(int a, int b) {
+        return a + b;
+      }
+
+      //メソッドから他のメソッドを呼び出してみます。
+      //averageメソッドは平均を求めるメソッドです。aとbの平均は「(a + b) / 2」で求められますが、足し算の部分はaddメソッドを利用しています。
+
+      public static boolean isEven(int a) {
+        return a % 2 == 0;
+      }
+
+      //真偽値を返すメソッド
+      //真偽値のデータ型はbooleanだから、メソッド定義はpublic statis booleanになる
+      //isEvenメソッドは引数の値が偶数かどうかを調べ、偶数であればtrue、奇数であればfalseを返す。
+      //returnでは2で割った余りが0（つまり偶数）であればtrue
+
+      public static void main(String[] args) {
+        int number = 9;
+        if(isEven(number)) {
+          System.out.println(number + "は偶数です");
+        } else {
+          System.out.println(number + "は奇数です");
+        }
+      }
+      public static boolean isEven(int a) {
+        return a % 2 == 0;
+      }
+
+      //真偽値を返す、isEvenメソッド
+      if (isEven(number)) = 9 % 2 == 0はfalse
