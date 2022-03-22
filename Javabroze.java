@@ -228,3 +228,58 @@ class Main {
 
       //真偽値を返す、isEvenメソッド
       if (isEven(number)) = 9 % 2 == 0はfalse
+
+
+      public class JavaSampleClass {
+
+        public static void main(String[] args) {
+          Station s = new Station();
+          s.setName("Santa Clara");
+          s.printName();
+        }
+      
+      }
+      
+        class Station {
+          private String name;
+          
+          public Station(String name) {
+            this.name = name;
+          }
+          public void setName(String name) {
+            this.name = name;
+          }
+          public void printName() {
+            System.out.println(name);
+          }
+        }
+
+        //コンストラクタを246・247で定義しているが、コンストラクタを定義していない場合は、デフォルトコンストラクタが自動的に定義される
+        //上記のコードでは、コンパイルエラーが出る
+        //理由は、236行目で、低数なしのコンストラクタが呼び出されているためコンパイルエラーになる
+
+      public class JavaSampleClass {
+
+        public static void main(String[] args) {
+          Station s = new Station("name");
+          s.setName("Santa Clara");
+          s.printName();
+        }
+      
+      }
+      
+        class Station {
+          private String name;
+          
+          public Station(String name) {
+            this.name = name;
+          }
+          public void setName(String name) {
+            this.name = name;
+          }
+          public void printName() {
+            System.out.println(name);
+          }
+        }
+  
+          //264行目の()の中に、"name"を入れることで、Santa Claraと表示されるようになる
