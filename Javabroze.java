@@ -318,4 +318,20 @@ class Main {
           //String name = scanner.next();でコンソールに入力されてから次の処理に移る
           
           
-          
+          public class Sample {
+            public static void main(String[] args) {
+              Item item1 = new Item ();
+              Item item2 = new Item ();
+              Item1.name = "A";
+              Item2.name = "B";
+              System.out.println(item1.name);
+            }
+          }
+          class Item {
+            static String name;
+          }
+
+          //staticフィールドの問題
+          //staticフィールドは全てのインスタンスで共有されるフィールド
+          //ヒープ領域とstatic領域の二つがある
+          //staticメソッドからインスタンスフィールドおよびインスタンスメソッドにアクセスすると、コンパイルエラーになる
