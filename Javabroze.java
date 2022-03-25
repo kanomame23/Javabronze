@@ -374,3 +374,31 @@ class Main {
         //コンストラクタは、そのコンストラクタが定義されているクラスのインスタンスを準備するためのメソッドであることを忘れてはいけない！
         //このように、サブクラスのコンストラクタからスーパークラスのコンストラクタを呼び出しながら各インスタンスを準備数仕組みを「コンストラクタチェーン」と呼びます
         //サブクラスのコンパイル時には、サブクラスのコンストラクタの1行目に「super();」が追加される
+        public class SuperClass {
+          public SuperClass(String val) {
+            System.out.println(val);
+          }
+        }
+        public class SubClass extends SuperClass {
+          public void test() {
+            System.out.println("test");
+          }
+        }
+        public class Sample {
+          public static void main(String[] args) {
+            SubClass sub = new SubClass();
+            sub.test();
+          }
+        }
+        //これだと、コンパイルエラーになる
+        //理由は、SubClassにコンストラクタがないから。コンストラクタがないため、デフォルトコンストラクタが自動的に追加され、下記のようになる
+        public class SubClass extends SuperClass {
+          public SubClass() {
+            super();
+          }
+          publicvoid test() {
+            System.out.println("test");
+          }
+        }
+        //ただし、デフォルトコンストラクタの場合、引数が定義されていない「引数なしのスーパーコンストラクタ」
+        //設問のSuperClassクラスでは、引数なしのコンストラクタはありません。そのため、コンパイルエラーになる！
