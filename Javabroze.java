@@ -335,3 +335,42 @@ class Main {
           //staticフィールドは全てのインスタンスで共有されるフィールド
           //ヒープ領域とstatic領域の二つがある
           //staticメソッドからインスタンスフィールドおよびインスタンスメソッドにアクセスすると、コンパイルエラーになる
+        public class SuperClass {
+          private int num;
+          public void setNum(int num) {
+            this.num = num;
+          }
+        }
+        public class SubClass extends SuperClass {
+          private int num;
+          public int getNum() {
+            return this.num;
+          }
+        }
+        public class Main {
+          public static void main(String[] args) {
+            SubClass sub = new SubClass();
+            sub.setNum(10);
+            System.out.println(sub.getNum());
+          }
+        }
+        //サブクラスのインスタンスを作る場合、スーパークラスとサブクラスの両方のインスタンスが作られ、それらが結合されてひとつのインスタンスになる。
+        //また、SuperClassクラスのインスタンスと差分のインスタンスが持っているsetNumやgetNumといったメソッドは、それぞれが別々に持っているnumフィールドにデータを入れたり、取り出したりしています。そのため、setNumメソッドで値をセットしても、取り出す時に見にいくnumフィールドの値はデフォルト値(int型なので0)のまま。
+        public class A {
+          public A() {
+            System.out.println("A");
+          }
+        }
+        public class B extends A {
+          public B() {
+            System.out.println("B");
+          }
+        }
+        public class Main {
+          public static void main(String[] args) {
+            B b = new B();
+          }
+        }
+        //コンストラクタは、そのコンストラクタが定義されているクラスのインスタンスを準備するためのメソッドであることを忘れてはいけない！
+        //このように、サブクラスのコンストラクタからスーパークラスのコンストラクタを呼び出しながら各インスタンスを準備数仕組みを「コンストラクタチェーン」と呼びます
+        //サブクラスのコンパイル時には、サブクラスのコンストラクタの1行目に「super();」が追加される
