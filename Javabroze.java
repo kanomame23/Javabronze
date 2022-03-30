@@ -402,3 +402,22 @@ class Main {
         }
         //ただし、デフォルトコンストラクタの場合、引数が定義されていない「引数なしのスーパーコンストラクタ」
         //設問のSuperClassクラスでは、引数なしのコンストラクタはありません。そのため、コンパイルエラーになる！
+
+        class Main {
+          public static void main(String[] args) {
+            Person person = new Person();
+            person.hello();
+          }
+        }
+
+        class Person {
+          public void hello() {
+            // 「こんにちは」と出力されるように書き換えてください
+            System.out.println("こんにちは");
+          }
+        }
+
+        //クラスはインスタンスの設計図
+        //インスタンスはオブジェクトの別名
+        //インスタンスの情報と振る舞いはクラスに定義する
+        //これが、クラスはメソッドをまとめる場所という意味に直結する
