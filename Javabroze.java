@@ -423,3 +423,11 @@ class Main {
         //これが、クラスはメソッドをまとめる場所という意味に直結する
 
         
+        public class A {
+          protected void hello() {
+            System.out.println("hello");
+          }
+        }
+        public void hello() {
+          System.out.println("B");
+        }
