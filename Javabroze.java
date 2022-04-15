@@ -431,3 +431,11 @@ class Main {
         public void hello() {
           System.out.println("B");
         }
+
+        public class Main {
+          public static void main (String[] args) {
+            final String COLOR = "blue";
+            COLOR = "red";
+            System.out.println(CsOLOR);
+          }
+        }
